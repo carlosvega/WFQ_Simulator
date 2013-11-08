@@ -170,7 +170,7 @@ last_q = -1 #ultima cola usada
 while len(results): #Mientras haya resultados en la lista
     for r in results: #para todos los resultados
         #Si el resultado es de la cola siguiente a la procesada
-        if r['q'] > last_q or (last_q == len(queues)-1 and r['q'] == 0) :
+        if r['q'] > last_q or (last_q == len(queues)-1 and r['q'] == 0) or len(results) == 1 :
             last_q = r['q'] #actualizar indicador de ultima cola
             #calcular tiempo de salida wfq. el anterior mas los megas si el anterior es superior
             #al tiempo de llegada. Es decir si el paquete tuvo que esperar para ser procesado
